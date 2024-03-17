@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, handleAddToSideBar}) => {
     const {recipe_name,recipe_image,short_description,ingredients,preparing_time,calories} =recipe;
     return (
-        <div className='max-w-4xl grid-cols-2'>
-        <div className='md:flex' >
+        
+        <div className='md:flex max-w-4xl grid-cols-2' >
             <div className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
-    <img src={recipe_image} alt="" className="rounded-xl" />
+    <img src={recipe_image} alt="" className="w-full rounded-xl" />
   </figure>
   <div className="card-body ">
     <h2 className="card-title">{recipe_name}</h2>
@@ -39,16 +39,16 @@ const Recipe = ({recipe}) => {
         </div>
     </div>
     <div className="card-actions">
-      <button className="btn btn-success rounded-full">Want to Cook</button>
+      <button onClick={() => handleAddToSideBar(recipe)} className="btn btn-success rounded-full">Want to Cook</button>
     </div>
   </div>
 </div>
         </div>
-        </div>
     );
 };
 Recipe.propTypes = {
-    recipe:PropTypes.object.isRequired
+    recipe:PropTypes.object.isRequired,
+    handleAddToSideBar: PropTypes.func
 }
 
 export default Recipe;

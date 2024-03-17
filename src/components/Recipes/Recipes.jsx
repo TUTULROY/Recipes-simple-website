@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
 
+import PropTypes from 'prop-types';
 
-const Recipes = () =>{
+    const Recipes = ({handleAddToSideBar}) =>{
 const [recipes, setRecipes] = useState([]);
 
 
@@ -15,16 +16,23 @@ useEffect(()=> {
 
     return(
 
-<div className="md:w-2/3 grid-cols-2 items-center">
+<div className="lg:grid grid-cols-2 gap-4 items-center">
 
 
 {
-    recipes.map(recipe => <Recipe key={recipe.recipe_id} recipe={recipe}></Recipe>)
+    recipes.map(recipe => <Recipe key={recipe.recipe_id} recipe={recipe}
+       
+       handleAddToSideBar={handleAddToSideBar}
+    ></Recipe>)
 }
 
 </div>
 
     )
+}
+
+Recipes.propTypes = {
+    handleAddToSideBar: PropTypes.func
 }
 
 export default Recipes;
