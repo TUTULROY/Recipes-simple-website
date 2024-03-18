@@ -5,10 +5,10 @@ const Recipe = ({recipe, handleAddToSideBar}) => {
     const {recipe_name,recipe_image,short_description,ingredients,preparing_time,calories} =recipe;
     return (
         
-        <div className='md:flex max-w-4xl grid-cols-2' >
-            <div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src={recipe_image} alt="" className="w-full rounded-xl" />
+        
+            <div className="card w-96 bg-base-100 gap-10 shadow-xl">
+  <figure>
+    <img className="w-60 h-50 rounded-xl" src={recipe_image} alt=""  />
   </figure>
   <div className="card-body ">
     <h2 className="card-title">{recipe_name}</h2>
@@ -43,7 +43,7 @@ const Recipe = ({recipe, handleAddToSideBar}) => {
     </div>
   </div>
 </div>
-        </div>
+       
     );
 };
 Recipe.propTypes = {

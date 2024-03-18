@@ -8,6 +8,20 @@ const SideBars = ({sideBars}) => {
             <div className="">
             <h2 className="text-2xl text-center font-bold">Want to cook: {sideBars.length}</h2>
             <hr />
+            <div className="overflow-x-auto">
+            <table className="table">
+            
+      <tbody>
+        <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Time</th>
+        <th>Calories</th>
+        </tr>
+        </tbody>
+   
+    </table>
+    </div>
             {
               sideBars.map(sideBar => <SideBar key={sideBar.recipe_id} sideBar={sideBar}></SideBar>)
             }
