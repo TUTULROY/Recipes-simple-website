@@ -18,7 +18,7 @@ const SideBars = ({sideBars,handleAddToSideBar2}) => {
       <tbody>
         <tr>
         <th></th>
-        <th></th>
+        <th>Name</th>
         <th>Time</th>
         <th>Calories</th>
         <th></th>
