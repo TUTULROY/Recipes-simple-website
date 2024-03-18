@@ -16,7 +16,7 @@ const Recipe = ({recipe, handleAddToSideBar}) => {
     <hr />
     <div>
         <h2 className='text-xl font-bold'>
-        Ingredients : 6
+        Ingredients:{ingredients.length}
         </h2>
         <h5 className='text-center'>{ingredients.map((gredient,idx)  => <ul key={idx}>  {gredient}
 

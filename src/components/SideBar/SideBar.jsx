@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-const SideBar = ({sideBar}) => {
+const SideBar = ({sideBar, handleAddToSideBar2}) => {
 const {recipe_id,recipe_name, preparing_time, calories} = sideBar;
+
 
     return (
         <div className="overflow-x-auto">
@@ -15,8 +16,9 @@ const {recipe_id,recipe_name, preparing_time, calories} = sideBar;
         <td>{recipe_name}</td>
         <td>{preparing_time}</td>
         <td>{calories}</td>
-        <td></td>
-        <button className="btn btn-success rounded-full">Preparing</button>
+        <td>
+        <button onClick={() =>handleAddToSideBar2(sideBar)} className="btn btn-success rounded-full">Preparing</button>
+        </td>
       </tr>
      </tbody>
      </table>
@@ -27,7 +29,8 @@ const {recipe_id,recipe_name, preparing_time, calories} = sideBar;
     );
 };
 SideBar.propTypes = {
-    sideBar: PropTypes.object
+    sideBar: PropTypes.object.isRequired,
+    handleAddToSideBar2:PropTypes.func
 }
 
 export default SideBar;

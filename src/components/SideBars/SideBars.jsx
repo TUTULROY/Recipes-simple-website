@@ -1,44 +1,50 @@
 import PropTypes from 'prop-types';
 import SideBar from '../SideBar/SideBar';
 
-const SideBars = ({sideBars}) => {
+
+const SideBars = ({sideBars,handleAddToSideBar2}) => {
+  
+
+ 
     return (
-        <div className="md:w-1/3">
+        <div className="">
        
-            <div className="">
+            <div className="overflow-x-auto">
             <h2 className="text-2xl text-center font-bold">Want to cook: {sideBars.length}</h2>
             <hr />
-            <div className="overflow-x-auto">
+            
             <table className="table">
             
       <tbody>
         <tr>
         <th></th>
-        <th>Name</th>
+        <th></th>
         <th>Time</th>
         <th>Calories</th>
+        <th></th>
         </tr>
         </tbody>
    
     </table>
     </div>
             {
-              sideBars.map(sideBar => <SideBar key={sideBar.recipe_id} sideBar={sideBar}></SideBar>)
+              sideBars.map(sideBar => <SideBar 
+                key={sideBar.recipe_id}
+                 sideBar={sideBar}
+                 handleAddToSideBar2={handleAddToSideBar2}
+                  ></SideBar>)
             }
  
 </div>
 
-            <div className="overflow-x-auto">
-            <h2 className="text-2xl text-center font-bold">Currently cooking:</h2>
-            <hr />
- 
-</div>
-        </div>
+           
+        
     );
 };
 
 SideBars.propTypes = {
-  sideBars: PropTypes.array
+  sideBars: PropTypes.array,
+  handleAddToSideBar2:PropTypes.func
 }
 
 export default SideBars;
